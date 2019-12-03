@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 
 
 //Context API
@@ -7,6 +7,7 @@ import { Consumer } from './Context';
 
 //Component Imports
 import Navigation from './Navigation/Navigation';
+import Home from './Home/Home';
 
 const App = () => {
     return (
@@ -14,7 +15,12 @@ const App = () => {
             <Consumer>
                 { context => (
                     <div className="app-component">
-                        <Navigation />                    
+                        <Navigation />
+
+                        <Route exact path='/' render={ () => 
+                            <Redirect to='/home' />
+                        }/>
+                        <Route path='/home' component={Home} />
                     </div>
                 )}
             </Consumer>
