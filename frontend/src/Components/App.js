@@ -6,8 +6,8 @@ import { BrowserRouter, Route, Redirect } from 'react-router-dom';
 import { Consumer } from './Context';
 
 //Component Imports
-import Navigation from './Navigation/Navigation';
 import Home from './Home/Home';
+import Dashboard from './Dashboard/Dashboard';
 
 const App = () => {
     return (
@@ -15,12 +15,11 @@ const App = () => {
             <Consumer>
                 { context => (
                     <div className="app-component">
-                        <Navigation />
-
                         <Route exact path='/' render={ () => 
                             <Redirect to='/home' />
                         }/>
                         <Route path='/home' component={Home} />
+                        <Route path='/dashboard' component={Dashboard} />
                     </div>
                 )}
             </Consumer>
