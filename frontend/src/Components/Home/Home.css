@@ -1,0 +1,13 @@
+.home-component {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0);
+    height: 95vh;
+}
+
+.button-container {
+    margin: 40vh;
+}
+
+.button {
+    margin: 5px;
+}
