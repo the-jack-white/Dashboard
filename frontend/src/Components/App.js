@@ -1,18 +1,24 @@
 import React from 'react';
-import { Consumer } from './Context'
+import { BrowserRouter } from 'react-router-dom';
+
+
+//Context API
+import { Consumer } from './Context';
 
 //Component Imports
 import Navigation from './Navigation/Navigation';
 
 const App = () => {
     return (
-        <Consumer>
-            { context => (
-                <div className="app-component">
-                    <Navigation />                    
-                </div>
-            )}
-        </Consumer>
+        <BrowserRouter>
+            <Consumer>
+                { context => (
+                    <div className="app-component">
+                        <Navigation />                    
+                    </div>
+                )}
+            </Consumer>
+        </BrowserRouter>
     )
 }
 
