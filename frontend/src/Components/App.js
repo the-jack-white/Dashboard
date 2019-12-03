@@ -1,8 +1,15 @@
 import React from 'react';
+import { Consumer } from './Context'
 
 const App = () => {
     return (
-        <h1>Hello World</h1>
+        <Consumer>
+            { context => (
+                <div>
+                    <h1>App State: {context.actions.appStatus()}</h1>
+                </div>
+            )}
+        </Consumer>
     )
 }
 
